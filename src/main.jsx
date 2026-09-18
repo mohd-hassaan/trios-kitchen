@@ -205,7 +205,9 @@ function App() {
       </main>
 
       <footer><img src="/assets/trios-logo.jpg" alt="Trio's Kitchen" /><p>Teen Tigada, Zayka Bigada!</p><span>Made for hungry people. ❤️</span>
-        <small>Developed by Mohd Hassan</small></footer>
+        <small className="developer-credit">
+          Developed by <strong>Mohd Hassan</strong>
+        </small></footer>
 
       <AnimatePresence>
         {showForm && <div className="modal-backdrop" onClick={() => setShowForm(false)}><motion.div className="modal" initial={{ scale: .7, opacity: 0, y: 40 }} animate={{ scale: 1, opacity: 1, y: 0 }} exit={{ scale: .7, opacity: 0, y: 40 }} transition={{ type: 'spring', stiffness: 200, damping: 18 }} onClick={e => e.stopPropagation()}>
