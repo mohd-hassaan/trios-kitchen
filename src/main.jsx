@@ -140,7 +140,7 @@ function App() {
           <span>KUCH</span><em>KHAOGE?</em>
         </motion.h1>
         <motion.div className="hero-copy" initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: .65 }}>
-          Zyada socho mat,<br/><strong>aake kha lo..... 😋</strong>
+          Zyada socho mat,<br /><strong>aake kha lo..... 😋</strong>
         </motion.div>
         <motion.div className="hero-actions" initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: .8 }}>
           <motion.button className="btn primary pulse-btn" onClick={openForm} whileHover={{ scale: 1.06 }} whileTap={{ scale: .96 }}>🎁 GET 10% OFF</motion.button>
@@ -178,7 +178,7 @@ function App() {
         </section>
 
         <section className="friend-banner">
-          <div><small>AKELA KYUN?</small><h2>TEEN TIGADA,<br/><span>ZAYKA BIGADA!</span></h2><p>Friends ko bulao. Bhookh ko manao. 😎</p></div>
+          <div><small>AKELA KYUN?</small><h2>TEEN TIGADA,<br /><span>ZAYKA BIGADA!</span></h2><p>Friends ko bulao. Bhookh ko manao. 😎</p></div>
           <motion.div className="big-plate" animate={{ rotate: [0, 5, -5, 0], scale: [1, 1.05, 1] }} transition={{ repeat: Infinity, duration: 4 }}>🍗</motion.div>
         </section>
 
@@ -204,11 +204,12 @@ function App() {
         </section>
       </main>
 
-      <footer><img src="/assets/trios-logo.jpg" alt="Trio's Kitchen"/><p>Teen Tigada, Zayka Bigada!</p><span>Made for hungry people. ❤️</span></footer>
+      <footer><img src="/assets/trios-logo.jpg" alt="Trio's Kitchen" /><p>Teen Tigada, Zayka Bigada!</p><span>Made for hungry people. ❤️</span>
+        <small>Developed by Mohd Hassan</small></footer>
 
       <AnimatePresence>
         {showForm && <div className="modal-backdrop" onClick={() => setShowForm(false)}><motion.div className="modal" initial={{ scale: .7, opacity: 0, y: 40 }} animate={{ scale: 1, opacity: 1, y: 0 }} exit={{ scale: .7, opacity: 0, y: 40 }} transition={{ type: 'spring', stiffness: 200, damping: 18 }} onClick={e => e.stopPropagation()}>
-          <button className="close" onClick={() => setShowForm(false)}>×</button><div className="modal-top">🎁</div><small>GUEST REGISTRATION</small><h2>10% OFF KE LIYE<br/>NAAM + NUMBER BATAO!</h2>
+          <button className="close" onClick={() => setShowForm(false)}>×</button><div className="modal-top">🎁</div><small>GUEST REGISTRATION</small><h2>10% OFF KE LIYE<br />NAAM + NUMBER BATAO!</h2>
           <form onSubmit={submit}>
             <label>Name<input value={name} onChange={e => setName(e.target.value)} placeholder="Aapka naam" autoFocus required /></label>
             <label>Mobile Number<input value={phone} onChange={e => setPhone(e.target.value.replace(/\D/g, '').slice(0, 10))} placeholder="10-digit mobile number" inputMode="numeric" maxLength="10" required /></label>
