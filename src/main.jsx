@@ -209,7 +209,7 @@ function App() {
           Developed by{" "}
           <strong>Mohd Hassan</strong>
           <a
-            href="https://portfolio-p44j69w8r-hassanmohammad6898-gmailcoms-projects.vercel.app/"
+            href="https://mohd-hassan-portfolio.vercel.app"
             target="_blank"
             rel="noopener noreferrer"
             className="portfolio-link"
