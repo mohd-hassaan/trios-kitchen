@@ -12,3 +12,41 @@
 .developer-credit strong {
   font-weight: 700;
 }
+.developer-credit {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 13px;
+  color: #8b8f98;
+}
+
+.developer-credit strong {
+  color: #ffffff;
+  font-weight: 600;
+}
+
+.portfolio-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  margin-left: 4px;
+  color: #7c5cff;
+  text-decoration: none;
+  font-weight: 600;
+  transition: all 0.25s ease;
+}
+
+.portfolio-link:hover {
+  color: #a78bfa;
+  transform: translateX(2px);
+}
+
+.arrow-icon {
+  font-size: 16px;
+  line-height: 1;
+  transition: transform 0.25s ease;
+}
+
+.portfolio-link:hover .arrow-icon {
+  transform: translate(3px, -3px);
+}

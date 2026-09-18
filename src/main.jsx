@@ -206,7 +206,18 @@ function App() {
 
       <footer><img src="/assets/trios-logo.jpg" alt="Trio's Kitchen" /><p>Teen Tigada, Zayka Bigada!</p><span>Made for hungry people. ❤️</span>
         <small className="developer-credit">
-          Developed by <strong>Mohd Hassan</strong>
+          Developed by{" "}
+          <strong>Mohd Hassan</strong>
+          <a
+            href="https://portfolio-p44j69w8r-hassanmohammad6898-gmailcoms-projects.vercel.app/"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="portfolio-link"
+            aria-label="Visit Mohd Hassan's portfolio"
+          >
+            <span>Visit Portfolio</span>
+            <span className="arrow-icon">↗</span>
+          </a>
         </small></footer>
 
       <AnimatePresence>
