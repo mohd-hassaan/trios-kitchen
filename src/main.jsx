@@ -235,7 +235,7 @@ function App() {
               </button>
 
               <small>
-                ⏰ Hurry up! Limited time discount — offer ends when the timer hits
+                ⏰ Hurry up! Limited time discount — offer ends at 3:00 PM sharp. After that, discount will be 
                 zero.
               </small>
             </>
