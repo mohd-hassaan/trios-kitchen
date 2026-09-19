@@ -56,14 +56,22 @@ function App() {
       live: diff === 0,
     };
   }, [now]);
+  const couponExpired = countdown.live;
 
   const openForm = () => {
+    if (couponExpired) return;
+
     setError('');
     setShowForm(true);
   };
 
   const submit = (e) => {
     e.preventDefault();
+    if (Date.now() >= EVENT_TIME) {
+      setError('⏰ Sorry! Limited time discount has expired.');
+      setShowForm(false);
+      return;
+    }
     setError('');
     const cleanPhone = normalizePhone(phone);
     if (!name.trim()) return setError('Apna naam enter karo.');
@@ -143,8 +151,15 @@ function App() {
           Zyada socho mat,<br /><strong>aake kha lo..... 😋</strong>
         </motion.div>
         <motion.div className="hero-actions" initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: .8 }}>
-          <motion.button className="btn primary pulse-btn" onClick={openForm} whileHover={{ scale: 1.06 }} whileTap={{ scale: .96 }}>🎁 GET 10% OFF</motion.button>
-          <motion.a className="btn secondary" href={MAP_URL} target="_blank" rel="noreferrer" whileHover={{ scale: 1.06 }} whileTap={{ scale: .96 }}>📍 LOCATION</motion.a>
+          <motion.button
+            className="btn primary pulse-btn"
+            onClick={openForm}
+            disabled={couponExpired}
+            whileHover={!couponExpired ? { scale: 1.06 } : {}}
+            whileTap={!couponExpired ? { scale: .96 } : {}}
+          >
+            {couponExpired ? '❌ OFFER EXPIRED' : '🎁 GET 10% OFF'}
+          </motion.button>          <motion.a className="btn secondary" href={MAP_URL} target="_blank" rel="noreferrer" whileHover={{ scale: 1.06 }} whileTap={{ scale: .96 }}>📍 LOCATION</motion.a>
         </motion.div>
         <motion.div className="event-pill" animate={{ boxShadow: ['0 0 0 0 rgba(245,181,27,.35)', '0 0 0 12px rgba(245,181,27,0)', '0 0 0 0 rgba(245,181,27,0)'] }} transition={{ repeat: Infinity, duration: 2.4 }}>
           SATURDAY • 19 SEPTEMBER • 3 PM – 10 PM
@@ -182,13 +197,72 @@ function App() {
           <motion.div className="big-plate" animate={{ rotate: [0, 5, -5, 0], scale: [1, 1.05, 1] }} transition={{ repeat: Infinity, duration: 4 }}>🍗</motion.div>
         </section>
 
-        <section className="discount-section" id="coupon">
-          <motion.div className="brush" animate={{ rotate: [-2, 1, -2] }} transition={{ repeat: Infinity, duration: 4 }}>GUEST SPECIAL</motion.div>
-          <h2>PEHLE REGISTER KARO...</h2>
-          <motion.div className="off" animate={{ scale: [1, 1.05, 1], rotate: [-2, 2, -2] }} transition={{ repeat: Infinity, duration: 2.8 }}>10% OFF</motion.div>
-          <p>Naam + mobile number register karo aur apna <b>unique coupon code</b> pao.</p>
-          <button className="btn primary big" onClick={openForm}>🎟️ MERA COUPON DO</button>
-          <small>Ek mobile number se sirf ek registration/coupon.</small>
+        <section
+          className={`discount-section ${couponExpired ? 'coupon-expired' : ''}`}
+          id="coupon"
+        >
+          {!couponExpired ? (
+            <>
+              <motion.div
+                className="brush"
+                animate={{ rotate: [-2, 1, -2] }}
+                transition={{ repeat: Infinity, duration: 4 }}
+              >
+                GUEST SPECIAL
+              </motion.div>
+
+              <h2>PEHLE REGISTER KARO...</h2>
+
+              <motion.div
+                className="off"
+                animate={{ scale: [1, 1.05, 1], rotate: [-2, 2, -2] }}
+                transition={{ repeat: Infinity, duration: 2.8 }}
+              >
+                10% OFF
+              </motion.div>
+
+              <p>
+                Naam + mobile number register karo aur apna{' '}
+                <b>unique coupon code</b> pao.
+              </p>
+
+              <button
+                className="btn primary big"
+                onClick={openForm}
+                disabled={couponExpired}
+              >
+                🎟️ MERA COUPON DO
+              </button>
+
+              <small>
+                ⏰ Hurry up! Limited time discount — offer ends when the timer hits
+                zero.
+              </small>
+            </>
+          ) : (
+            <>
+              <div className="brush">OFFER CLOSED</div>
+
+              <h2>⏰ DISCOUNT TIME OVER!</h2>
+
+              <div className="off">0% OFF</div>
+
+              <p>
+                Sorry! 10% discount coupon generation is now closed.
+              </p>
+
+              <button
+                className="btn primary big"
+                disabled
+              >
+                ❌ COUPON GENERATION CLOSED
+              </button>
+
+              <small>
+                Thank you for your interest in Trio's Kitchen! ❤️
+              </small>
+            </>
+          )}
         </section>
 
         <section className="location-section">
