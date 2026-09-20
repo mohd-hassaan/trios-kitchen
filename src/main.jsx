@@ -167,8 +167,8 @@ function App() {
         <motion.div className="scroll-cue" animate={{ y: [0, 8, 0] }} transition={{ repeat: Infinity, duration: 1.5 }}>↓ bhookh neeche hai ↓</motion.div>
       </header>
 
-      <section className="countdown-wrap">
-        {/* <p>{countdown.live ? '🔥 WE ARE LIVE! Aao, stall pe milte hain!' : '⏳ Exhibition vibes loading...'}</p> */}
+      {/* <section className="countdown-wrap">
+        <p>{countdown.live ? '🔥 WE ARE LIVE! Aao, stall pe milte hain!' : '⏳ Exhibition vibes loading...'}</p>
         <div className="countdown">
           {[['DAYS', countdown.d], ['HRS', countdown.h], ['MIN', countdown.m], ['SEC', countdown.s]].map(([label, val]) => (
             <motion.div className="time-box" key={label} animate={{ scale: label === 'SEC' ? [1, 1.08, 1] : 1 }} transition={{ repeat: Infinity, duration: 1 }}>
@@ -176,7 +176,7 @@ function App() {
             </motion.div>
           ))}
         </div>
-      </section>
+      </section> */}
 
       <main>
         <section className="section food-section" id="food">
@@ -235,7 +235,7 @@ function App() {
               </button>
 
               <small>
-                ⏰ Hurry up! Limited time discount — offer ends at 3:00 PM sharp. After that, discount will be 
+                ⏰ Hurry up! Limited time discount — offer ends at 3:00 PM sharp. After that, discount will be
                 zero.
               </small>
             </>
