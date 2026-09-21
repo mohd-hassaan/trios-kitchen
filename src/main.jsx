@@ -53,11 +53,11 @@ const creators = [
     cards: [
       {
         image: hebaCard1,
-        label: 'FRONT',
+        label: '',
       },
       {
         image: hebaCard2,
-        label: 'CONTACT',
+        label: '',
       },
     ],
     instagram: 'https://www.instagram.com/hebacreates__',
@@ -72,11 +72,11 @@ const creators = [
     cards: [
       {
         image: zainabCard1,
-        label: 'FRONT',
+        label: '',
       },
       {
         image: zainabCard2,
-        label: 'CONTACT',
+        label: '',
       },
     ],
     email: 'zainukhan065@gmail.com',
