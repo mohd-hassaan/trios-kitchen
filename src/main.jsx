@@ -533,7 +533,7 @@ function App() {
         >
 
           <span>
-            AAP AAYE,
+            AAP SAB AAYE,
           </span>
 
           <em>
@@ -857,9 +857,9 @@ function App() {
 
             Stall visit ke waqt share kiye gaye cards ab yahin mil jayenge —
             <b>
-              number, location aur contact details clearly visible
+              number, location aur contact details.
             </b>{' '}
-            hain.
+          
 
           </p>
 
