@@ -69,3 +69,690 @@
 .coupon-expired .brush {
   opacity: 0.7;
 }
+/* =========================================================
+   POST-EXHIBITION V-CARD SECTION
+   ========================================================= */
+
+.vcard-section {
+  padding: 90px 5vw 70px;
+  position: relative;
+  overflow: hidden;
+
+  background:
+    radial-gradient(
+      circle at 10% 15%,
+      rgba(245, 181, 27, 0.12),
+      transparent 30%
+    ),
+    radial-gradient(
+      circle at 90% 85%,
+      rgba(11, 74, 50, 0.10),
+      transparent 32%
+    );
+}
+
+
+.vcard-section-heading {
+  max-width: 1100px;
+  margin-inline: auto;
+}
+
+
+.vcard-intro {
+  max-width: 850px;
+  margin: 18px auto 42px;
+}
+
+
+/* =========================================================
+   V-CARD GRID
+   ========================================================= */
+
+.vcard-grid {
+  max-width: 1180px;
+  margin: 0 auto;
+
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+
+  gap: 28px;
+}
+
+
+/* =========================================================
+   V-CARD
+   ========================================================= */
+
+.vcard-card {
+  overflow: hidden;
+
+  border-radius: 30px;
+
+  background: rgba(255, 255, 255, 0.94);
+
+  border: 1px solid rgba(11, 74, 50, 0.12);
+
+  box-shadow:
+    0 24px 70px rgba(11, 74, 50, 0.13);
+
+  transition:
+    box-shadow 0.3s ease;
+}
+
+
+.vcard-card:hover {
+  box-shadow:
+    0 30px 85px rgba(11, 74, 50, 0.20);
+}
+
+
+/* =========================================================
+   V-CARD IMAGE
+   ========================================================= */
+
+.vcard-image-wrap {
+  position: relative;
+
+  padding: 18px;
+
+  background:
+    linear-gradient(
+      145deg,
+      #f5f0e6,
+      #e8eee8
+    );
+}
+
+
+.vcard-image {
+  display: block;
+
+  width: 100%;
+
+  aspect-ratio: 504 / 317;
+
+  object-fit: cover;
+
+  border-radius: 20px;
+
+  box-shadow:
+    0 14px 35px rgba(0, 0, 0, 0.12);
+}
+
+
+.vcard-badge {
+  position: absolute;
+
+  top: 30px;
+  right: 30px;
+
+  padding: 8px 12px;
+
+  border-radius: 999px;
+
+  background: rgba(11, 74, 50, 0.94);
+
+  color: #fff;
+
+  font-size: 10px;
+
+  font-weight: 800;
+
+  letter-spacing: 0.14em;
+}
+
+
+/* =========================================================
+   V-CARD INFORMATION
+   ========================================================= */
+
+.vcard-info {
+  padding: 28px;
+}
+
+
+.vcard-heading {
+  display: flex;
+
+  justify-content: space-between;
+
+  gap: 18px;
+
+  align-items: flex-start;
+}
+
+
+.vcard-heading small,
+.footer-vcard-title small {
+  display: block;
+
+  font-size: 10px;
+
+  font-weight: 900;
+
+  letter-spacing: 0.18em;
+
+  opacity: 0.58;
+}
+
+
+.vcard-heading h3 {
+  margin: 5px 0 2px;
+
+  font-size: clamp(22px, 3vw, 31px);
+
+  line-height: 1;
+}
+
+
+.vcard-heading p {
+  margin: 0;
+
+  font-weight: 700;
+
+  opacity: 0.68;
+}
+
+
+.vcard-icon {
+  width: 46px;
+  height: 46px;
+
+  display: grid;
+
+  place-items: center;
+
+  flex: 0 0 46px;
+
+  border-radius: 50%;
+
+  background: #0b4a32;
+
+  color: #fff;
+
+  font-size: 20px;
+}
+
+
+/* =========================================================
+   CONTACT DETAILS
+   ========================================================= */
+
+.contact-list {
+  display: grid;
+
+  gap: 10px;
+
+  margin: 25px 0;
+}
+
+
+.contact-row {
+  display: flex;
+
+  align-items: center;
+
+  gap: 13px;
+
+  padding: 13px 15px;
+
+  border-radius: 16px;
+
+  background: #f7f6f0;
+
+  color: inherit;
+
+  text-decoration: none;
+
+  border: 1px solid rgba(11, 74, 50, 0.07);
+
+  transition:
+    transform 0.2s ease,
+    background 0.2s ease;
+}
+
+
+a.contact-row:hover {
+  transform: translateX(4px);
+
+  background: #eef4ef;
+}
+
+
+.contact-symbol {
+  width: 38px;
+  height: 38px;
+
+  display: grid;
+
+  place-items: center;
+
+  border-radius: 12px;
+
+  background: #0b4a32;
+
+  color: #fff;
+
+  flex: 0 0 38px;
+}
+
+
+.contact-row small {
+  display: block;
+
+  font-size: 9px;
+
+  letter-spacing: 0.13em;
+
+  font-weight: 900;
+
+  opacity: 0.5;
+}
+
+
+.contact-row strong {
+  display: block;
+
+  margin-top: 2px;
+
+  font-size: 14px;
+
+  overflow-wrap: anywhere;
+}
+
+
+/* =========================================================
+   V-CARD BUTTONS
+   ========================================================= */
+
+.vcard-actions {
+  display: flex;
+
+  flex-wrap: wrap;
+
+  gap: 10px;
+}
+
+
+.vcard-actions .btn {
+  flex: 1 1 140px;
+
+  text-align: center;
+}
+
+
+/* =========================================================
+   NEW FOOTER
+   ========================================================= */
+
+.new-footer {
+  position: relative;
+
+  padding: 65px 5vw 25px;
+
+  color: #fff;
+
+  background:
+    radial-gradient(
+      circle at 85% 10%,
+      rgba(245, 181, 27, 0.16),
+      transparent 25%
+    ),
+    linear-gradient(
+      145deg,
+      #063622,
+      #0b4a32 60%,
+      #063622
+    );
+
+  overflow: hidden;
+}
+
+
+.new-footer::before {
+  content: "";
+
+  position: absolute;
+
+  inset: 0;
+
+  opacity: 0.07;
+
+  pointer-events: none;
+
+  background-image:
+    radial-gradient(
+      #fff 1px,
+      transparent 1px
+    );
+
+  background-size: 18px 18px;
+}
+
+
+/* =========================================================
+   FOOTER BRAND
+   ========================================================= */
+
+.footer-brand,
+.footer-vcards,
+.footer-bottom {
+  position: relative;
+
+  z-index: 1;
+
+  max-width: 1180px;
+
+  margin-inline: auto;
+}
+
+
+.footer-brand {
+  display: flex;
+
+  align-items: center;
+
+  gap: 18px;
+
+  margin-bottom: 42px;
+}
+
+
+.footer-brand img {
+  width: 76px;
+  height: 76px;
+
+  border-radius: 20px;
+
+  object-fit: cover;
+
+  background: #fff;
+
+  padding: 4px;
+}
+
+
+.footer-brand h2 {
+  margin: 0;
+
+  font-size: clamp(
+    28px,
+    4vw,
+    42px
+  );
+}
+
+
+.footer-brand p {
+  margin: 5px 0 0;
+
+  opacity: 0.72;
+}
+
+
+/* =========================================================
+   FOOTER V-CARDS CONTAINER
+   ========================================================= */
+
+.footer-vcards {
+  padding: 28px;
+
+  border-radius: 28px;
+
+  background: rgba(
+    255,
+    255,
+    255,
+    0.08
+  );
+
+  border: 1px solid rgba(
+    255,
+    255,
+    255,
+    0.13
+  );
+
+  backdrop-filter: blur(12px);
+}
+
+
+.footer-vcard-title {
+  display: flex;
+
+  align-items: center;
+
+  gap: 14px;
+
+  margin-bottom: 22px;
+}
+
+
+.footer-vcard-title > span {
+  width: 46px;
+  height: 46px;
+
+  display: grid;
+
+  place-items: center;
+
+  border-radius: 14px;
+
+  background: #f5b51b;
+
+  color: #18351f;
+
+  font-size: 22px;
+}
+
+
+.footer-vcard-title h3 {
+  margin: 4px 0 0;
+
+  font-size: clamp(
+    18px,
+    3vw,
+    25px
+  );
+}
+
+
+/* =========================================================
+   FOOTER CARD GRID
+   ========================================================= */
+
+.footer-vcard-grid {
+  display: grid;
+
+  grid-template-columns:
+    repeat(
+      2,
+      minmax(0, 1fr)
+    );
+
+  gap: 18px;
+}
+
+
+/* =========================================================
+   FOOTER MINI CARD
+   ========================================================= */
+
+.footer-mini-card {
+  display: grid;
+
+  grid-template-columns:
+    145px 1fr;
+
+  gap: 17px;
+
+  align-items: center;
+
+  padding: 14px;
+
+  border-radius: 20px;
+
+  background: rgba(
+    255,
+    255,
+    255,
+    0.96
+  );
+
+  color: #123d2c;
+}
+
+
+.footer-mini-card img {
+  width: 145px;
+
+  aspect-ratio: 504 / 317;
+
+  object-fit: cover;
+
+  border-radius: 13px;
+}
+
+
+.footer-mini-card strong,
+.footer-mini-card span,
+.footer-mini-card a {
+  display: block;
+}
+
+
+.footer-mini-card strong {
+  font-size: 15px;
+
+  margin-bottom: 3px;
+}
+
+
+.footer-mini-card span {
+  font-size: 12px;
+
+  opacity: 0.7;
+
+  margin-top: 4px;
+}
+
+
+.footer-mini-card a {
+  margin-top: 10px;
+
+  font-weight: 900;
+
+  font-size: 13px;
+
+  color: #0b4a32;
+
+  text-decoration: none;
+}
+
+
+/* =========================================================
+   FOOTER BOTTOM
+   ========================================================= */
+
+.footer-bottom {
+  display: flex;
+
+  justify-content: space-between;
+
+  gap: 20px;
+
+  padding-top: 25px;
+
+  margin-top: 28px;
+
+  border-top:
+    1px solid
+    rgba(
+      255,
+      255,
+      255,
+      0.14
+    );
+
+  font-size: 12px;
+
+  opacity: 0.78;
+}
+
+
+.footer-bottom a {
+  color: inherit;
+
+  text-decoration: none;
+
+  font-weight: 800;
+}
+
+
+/* =========================================================
+   TABLET
+   ========================================================= */
+
+@media (max-width: 850px) {
+
+  .vcard-grid,
+  .footer-vcard-grid {
+    grid-template-columns: 1fr;
+  }
+
+
+  .footer-mini-card {
+    grid-template-columns:
+      160px 1fr;
+  }
+
+
+  .footer-mini-card img {
+    width: 160px;
+  }
+
+}
+
+
+/* =========================================================
+   MOBILE
+   ========================================================= */
+
+@media (max-width: 560px) {
+
+  .vcard-section {
+    padding:
+      65px 18px 50px;
+  }
+
+
+  .vcard-info {
+    padding: 21px;
+  }
+
+
+  .vcard-image-wrap {
+    padding: 11px;
+  }
+
+
+  .vcard-image {
+    border-radius: 15px;
+  }
+
+
+  .footer-mini-card {
+    grid-template-columns: 1fr;
+  }
+
+
+  .footer-mini-card img {
+    width: 100%;
+  }
+
+
+  .footer-bottom {
+    flex-direction: column;
+  }
+
+}
