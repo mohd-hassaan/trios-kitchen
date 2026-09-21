@@ -929,71 +929,822 @@ a.contact-row:hover {
 
 }
 /* =========================================================
-   TWO-SIDED V-CARDS
+   V-CARD IMAGE AREA
    ========================================================= */
+
+.vcard-image-wrap {
+  position: relative;
+  padding: 18px;
+
+  background:
+    linear-gradient(
+      145deg,
+      #f5f0e6,
+      #e8eee8
+    );
+}
+
+
+/* BOTH SIDES */
+.vcard-image-grid {
+  display: grid;
+
+  grid-template-columns:
+    repeat(2, minmax(0, 1fr));
+
+  gap: 14px;
+
+  width: 100%;
+}
+
+
+/* INDIVIDUAL SIDE */
+.vcard-side {
+  position: relative;
+
+  min-width: 0;
+
+  overflow: hidden;
+
+  border-radius: 18px;
+
+  background: #fff;
+
+  border: 1px solid rgba(11, 74, 50, 0.12);
+}
+
+
+/* IMPORTANT:
+   CONTAIN = NEVER CUT THE V-CARD */
+.vcard-side .vcard-image {
+  display: block;
+
+  width: 100%;
+  height: auto;
+
+  aspect-ratio: 504 / 317;
+
+  object-fit: contain;
+
+  background: #fff;
+
+  border-radius: 18px;
+}
+
+
+.vcard-side-label {
+  position: absolute;
+
+  left: 10px;
+  bottom: 10px;
+
+  padding: 6px 10px;
+
+  border-radius: 999px;
+
+  background: rgba(11, 74, 50, 0.92);
+
+  color: #fff;
+
+  font-size: 9px;
+
+  font-weight: 900;
+
+  letter-spacing: 0.12em;
+}
+
+
+/* =========================================================
+   FOOTER V-CARD SECTION
+   ========================================================= */
+
+.footer-vcard-grid {
+  display: grid;
+
+  grid-template-columns: 1fr;
+
+  gap: 22px;
+
+  width: 100%;
+}
+
+
+/* =========================================================
+   EACH PERSON = ONE FULL CARD
+   ========================================================= */
+
+.footer-mini-card {
+  display: grid;
+
+  grid-template-columns:
+    minmax(320px, 1.15fr)
+    minmax(260px, 0.85fr);
+
+  align-items: center;
+
+  gap: 28px;
+
+  width: 100%;
+
+  padding: 18px;
+
+  border-radius: 24px;
+
+  background: rgba(
+    255,
+    255,
+    255,
+    0.97
+  );
+
+  color: #123d2c;
+
+  box-sizing: border-box;
+}
+
+
+/* =========================================================
+   FOOTER CARD IMAGES
+   ========================================================= */
+
+.footer-card-images {
+  display: grid;
+
+  grid-template-columns:
+    repeat(2, minmax(0, 1fr));
+
+  gap: 12px;
+
+  min-width: 0;
+}
+
+
+.footer-card-side {
+  position: relative;
+
+  min-width: 0;
+
+  overflow: hidden;
+
+  border-radius: 14px;
+
+  background: #f7f5ed;
+
+  border: 1px solid rgba(
+    11,
+    74,
+    50,
+    0.12
+  );
+}
+
+
+.footer-card-side img {
+  display: block;
+
+  width: 100%;
+  height: auto;
+
+  aspect-ratio: 504 / 317;
+
+  /*
+     CONTAIN PREVENTS CROPPING
+  */
+  object-fit: contain;
+
+  background: #fff;
+}
+
+
+.footer-card-side span {
+  position: absolute;
+
+  left: 8px;
+  bottom: 8px;
+
+  padding: 5px 8px;
+
+  border-radius: 999px;
+
+  background: rgba(
+    0,
+    0,
+    0,
+    0.70
+  );
+
+  color: #fff;
+
+  font-size: 8px;
+
+  font-weight: 900;
+
+  letter-spacing: 0.12em;
+}
+
+
+/* =========================================================
+   FOOTER CONTACT INFORMATION
+   ========================================================= */
+
+.footer-mini-info {
+  display: flex;
+
+  flex-direction: column;
+
+  justify-content: center;
+
+  min-width: 0;
+}
+
+
+.footer-mini-info small {
+  font-size: 10px;
+
+  font-weight: 900;
+
+  letter-spacing: 0.14em;
+
+  opacity: 0.55;
+
+  text-transform: uppercase;
+}
+
+
+.footer-mini-info strong {
+  margin-top: 5px;
+
+  font-size: clamp(
+    22px,
+    3vw,
+    30px
+  );
+
+  line-height: 1.05;
+
+  color: #0b4a32;
+}
+
+
+.footer-phone {
+  display: inline-flex;
+
+  align-items: center;
+
+  margin-top: 18px;
+
+  width: fit-content;
+
+  padding: 10px 14px;
+
+  border-radius: 12px;
+
+  background: #edf5ef;
+
+  color: #0b4a32;
+
+  text-decoration: none;
+
+  font-size: 16px;
+
+  font-weight: 900;
+}
+
+
+.footer-location {
+  margin-top: 9px;
+
+  font-size: 14px;
+
+  font-weight: 700;
+
+  opacity: 0.70;
+}
+
+
+/* =========================================================
+   SOCIAL / OTHER LINKS
+   ========================================================= */
+
+.footer-mini-links {
+  display: flex;
+
+  flex-wrap: wrap;
+
+  gap: 8px;
+
+  margin-top: 18px;
+}
+
+
+.footer-mini-links a {
+  display: inline-flex;
+
+  align-items: center;
+
+  padding: 8px 11px;
+
+  border-radius: 999px;
+
+  background: #f3f3ed;
+
+  color: #0b4a32;
+
+  text-decoration: none;
+
+  font-size: 11px;
+
+  font-weight: 800;
+
+  transition:
+    transform 0.2s ease,
+    background 0.2s ease;
+}
+
+
+.footer-mini-links a:hover {
+  transform: translateY(-2px);
+
+  background: #f5b51b;
+
+  color: #18351f;
+}
+
+
+/* =========================================================
+   TABLET
+   ========================================================= */
+
+@media (max-width: 900px) {
+
+  .footer-mini-card {
+    grid-template-columns: 1fr;
+  }
+
+  .footer-card-images {
+    width: 100%;
+  }
+
+  .footer-mini-info {
+    padding: 4px 8px 8px;
+  }
+
+}
+
+
+/* =========================================================
+   MOBILE
+   ========================================================= */
+
+@media (max-width: 560px) {
+
+  /*
+     MAIN V-CARD:
+     KEEP BOTH SIDES SIDE-BY-SIDE
+     INSTEAD OF STACKING THEM.
+  */
+
+  .vcard-image-wrap {
+    padding: 11px;
+  }
+
+
+  .vcard-image-grid {
+    grid-template-columns:
+      repeat(2, minmax(0, 1fr));
+
+    gap: 8px;
+  }
+
+
+  .vcard-side {
+    border-radius: 12px;
+  }
+
+
+  .vcard-side .vcard-image {
+    aspect-ratio: 504 / 317;
+
+    object-fit: contain;
+
+    border-radius: 12px;
+  }
+
+
+  .vcard-side-label {
+    left: 6px;
+    bottom: 6px;
+
+    padding: 4px 7px;
+
+    font-size: 7px;
+  }
+
+
+  /*
+     FOOTER
+  */
+
+  .footer-vcard-grid {
+    gap: 16px;
+  }
+
+
+  .footer-mini-card {
+    padding: 12px;
+
+    border-radius: 20px;
+
+    gap: 18px;
+  }
+
+
+  /*
+     KEEP BOTH V-CARDS VISIBLE
+  */
+
+  .footer-card-images {
+    grid-template-columns:
+      repeat(2, minmax(0, 1fr));
+
+    gap: 7px;
+  }
+
+
+  .footer-card-side {
+    border-radius: 10px;
+  }
+
+
+  .footer-card-side img {
+    aspect-ratio: 504 / 317;
+
+    object-fit: contain;
+
+    border-radius: 10px;
+  }
+
+
+  .footer-card-side span {
+    left: 5px;
+    bottom: 5px;
+
+    padding: 4px 6px;
+
+    font-size: 7px;
+  }
+
+
+  .footer-mini-info strong {
+    font-size: 23px;
+  }
+
+
+  .footer-phone {
+    font-size: 15px;
+
+    margin-top: 13px;
+  }
+
+
+  .footer-location {
+    font-size: 13px;
+  }
+
+
+  .footer-mini-links {
+    margin-top: 13px;
+  }
+
+}
+
+/* =========================================================
+   FINAL V-CARD RESPONSIVE FIX
+   ========================================================= */
+
+/* Main V-card image area */
+.vcard-image-wrap {
+  position: relative;
+  padding: 18px;
+  background: linear-gradient(145deg, #f5f0e6, #e8eee8);
+}
 
 .vcard-image-grid {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 12px;
+  gap: 14px;
+  width: 100%;
 }
 
 .vcard-side {
   position: relative;
+  min-width: 0;
+  overflow: hidden;
+  border-radius: 18px;
+  background: #fff;
+  border: 1px solid rgba(11, 74, 50, 0.12);
 }
 
 .vcard-side .vcard-image {
-  width: 100%;
   display: block;
+  width: 100%;
+  height: auto;
   aspect-ratio: 504 / 317;
-  object-fit: cover;
-  border-radius: 16px;
-  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.12);
+  object-fit: contain;
+  background: #fff;
+  border-radius: 18px;
 }
 
 .vcard-side-label {
   position: absolute;
   left: 10px;
   bottom: 10px;
-  padding: 6px 9px;
+  padding: 6px 10px;
   border-radius: 999px;
-  background: rgba(0, 0, 0, 0.72);
+  background: rgba(11, 74, 50, 0.92);
   color: #fff;
   font-size: 9px;
   font-weight: 900;
   letter-spacing: 0.12em;
 }
 
-.vcard-badge {
-  z-index: 2;
+/* =========================================================
+   FOOTER V-CARDS
+   ========================================================= */
+
+.footer-vcard-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 22px;
+  width: 100%;
+  max-width: 1180px;
+  margin: 25px auto 0;
 }
 
-/* Footer: show both sides clearly */
+/* One complete person card per row */
+.footer-mini-card {
+  display: grid;
+  grid-template-columns: minmax(0, 1.35fr) minmax(250px, 0.65fr);
+  align-items: center;
+  gap: 30px;
+  width: 100%;
+  padding: 20px;
+  border-radius: 26px;
+  background: rgba(255, 255, 255, 0.97);
+  color: #123d2c;
+  box-sizing: border-box;
+  overflow: hidden;
+}
+
+/* Two V-card sides always remain visible together */
 .footer-card-images {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 8px;
-}
-
-.footer-card-images img {
+  gap: 14px;
   width: 100%;
-  aspect-ratio: 504 / 317;
-  object-fit: cover;
-  border-radius: 10px;
-  display: block;
+  min-width: 0;
 }
 
-/* Mobile */
-@media (max-width: 560px) {
-  .vcard-image-grid {
-    grid-template-columns: 1fr;
-  }
+.footer-card-side {
+  position: relative;
+  min-width: 0;
+  overflow: hidden;
+  border-radius: 15px;
+  background: #fff;
+  border: 2px solid rgba(245, 181, 27, 0.65);
+}
 
-  .vcard-side .vcard-image {
-    aspect-ratio: 504 / 317;
+.footer-card-side img {
+  display: block;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 504 / 317;
+  object-fit: contain;
+  background: #fff;
+}
+
+.footer-card-side span {
+  position: absolute;
+  left: 8px;
+  bottom: 8px;
+  padding: 5px 8px;
+  border-radius: 999px;
+  background: rgba(11, 74, 50, 0.92);
+  color: #fff;
+  font-size: 8px;
+  font-weight: 900;
+  letter-spacing: 0.12em;
+}
+
+/* Contact information */
+.footer-mini-info {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  min-width: 0;
+  padding: 5px 8px;
+}
+
+.footer-mini-info small {
+  font-size: 10px;
+  font-weight: 900;
+  letter-spacing: 0.14em;
+  opacity: 0.55;
+  text-transform: uppercase;
+}
+
+.footer-mini-info strong {
+  margin-top: 6px;
+  font-size: clamp(22px, 3vw, 30px);
+  line-height: 1.05;
+  color: #0b4a32;
+}
+
+.footer-phone {
+  display: inline-flex;
+  align-items: center;
+  width: fit-content;
+  margin-top: 17px;
+  padding: 10px 14px;
+  border-radius: 12px;
+  background: #edf5ef;
+  color: #0b4a32;
+  text-decoration: none;
+  font-size: 16px;
+  font-weight: 900;
+}
+
+.footer-location {
+  margin-top: 9px;
+  font-size: 14px;
+  font-weight: 700;
+  opacity: 0.7;
+}
+
+.footer-mini-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 16px;
+}
+
+.footer-mini-links a {
+  display: inline-flex;
+  align-items: center;
+  padding: 8px 11px;
+  border-radius: 999px;
+  background: #f3f3ed;
+  color: #0b4a32;
+  text-decoration: none;
+  font-size: 11px;
+  font-weight: 800;
+  transition: transform 0.2s ease, background 0.2s ease;
+}
+
+.footer-mini-links a:hover {
+  transform: translateY(-2px);
+  background: #f5b51b;
+  color: #18351f;
+}
+
+/* =========================================================
+   TABLET
+   ========================================================= */
+
+@media (max-width: 900px) {
+  .footer-mini-card {
+    grid-template-columns: 1fr;
+    gap: 20px;
   }
 
   .footer-card-images {
+    width: 100%;
+  }
+
+  .footer-mini-info {
+    padding: 4px 8px 8px;
+  }
+}
+
+/* =========================================================
+   MOBILE
+   ========================================================= */
+
+@media (max-width: 560px) {
+  /* Main V-card: never stack/crop the two sides */
+  .vcard-section {
+    padding: 65px 18px 50px;
+  }
+
+  .vcard-info {
+    padding: 21px;
+  }
+
+  .vcard-image-wrap {
+    padding: 10px;
+  }
+
+  .vcard-image-grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 7px;
+  }
+
+  .vcard-side {
+    border-radius: 12px;
+  }
+
+  .vcard-side .vcard-image {
+    width: 100%;
+    height: auto;
+    aspect-ratio: 504 / 317;
+    object-fit: contain;
+    border-radius: 12px;
+  }
+
+  .vcard-side-label {
+    left: 5px;
+    bottom: 5px;
+    padding: 4px 6px;
+    font-size: 7px;
+  }
+
+  /* Footer person card */
+  .footer-vcard-grid {
+    gap: 16px;
+    margin-top: 20px;
+  }
+
+  .footer-mini-card {
+    grid-template-columns: 1fr;
+    gap: 16px;
+    padding: 12px;
+    border-radius: 20px;
+  }
+
+  /* CRITICAL: front + back stay side-by-side on mobile */
+  .footer-card-images {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 7px;
+    width: 100%;
+  }
+
+  .footer-card-side {
+    border-radius: 10px;
+  }
+
+  .footer-card-side img {
+    width: 100%;
+    height: auto;
+    aspect-ratio: 504 / 317;
+    object-fit: contain;
+    border-radius: 10px;
+  }
+
+  .footer-card-side span {
+    left: 5px;
+    bottom: 5px;
+    padding: 4px 6px;
+    font-size: 7px;
+  }
+
+  .footer-mini-info {
+    padding: 3px 5px 5px;
+    text-align: center;
+    align-items: center;
+  }
+
+  .footer-mini-info strong {
+    font-size: 23px;
+  }
+
+  .footer-phone {
+    font-size: 15px;
+    margin-top: 12px;
+  }
+
+  .footer-location {
+    font-size: 13px;
+  }
+
+  .footer-mini-links {
+    justify-content: center;
+    margin-top: 12px;
+  }
+
+  .footer-bottom {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 18px;
+  }
+
+  .footer-copy {
+    align-items: center;
+  }
+
+  .developer-credit {
+    flex-direction: column;
+    gap: 9px;
+    white-space: normal;
   }
 }

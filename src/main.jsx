@@ -133,6 +133,8 @@ function ContactCard({ person, index }) {
 
         </div>
 
+
+
       </div>
 
 
@@ -855,7 +857,7 @@ function App() {
             <b>
               number, location aur contact details.
             </b>{' '}
-          
+
 
           </p>
 
@@ -1011,40 +1013,102 @@ function App() {
                 key={person.name}
               >
 
+                {/* BOTH V-CARD SIDES */}
                 <div className="footer-card-images">
 
                   {person.cards.map((card) => (
-                    <img
-                     
-                      alt={`${person.name} ${card.label.toLowerCase()} card`}
-                      loading="lazy"
-                    />
+
+                    <div
+                      className="footer-card-side"
+                      key={card.image}
+                    >
+
+                      <img
+                        src={card.image}
+                        alt={`${person.name} ${card.label.toLowerCase()} side`}
+                        loading="lazy"
+                      />
+
+                      <span>
+                        {card.label}
+                      </span>
+
+                    </div>
+
                   ))}
 
                 </div>
 
 
-                <div>
+                {/* CONTACT INFORMATION */}
+                <div className="footer-mini-info">
+
+                  <small>
+                    {person.role}
+                  </small>
 
                   <strong>
                     {person.name}
                   </strong>
 
-                  <span>
-                    {person.role}
-                  </span>
-
 
                   <a
                     href={`tel:${person.phone.replace(/\D/g, '')}`}
+                    className="footer-phone"
                   >
                     ☎ {person.phone}
                   </a>
 
 
-                  <span>
+                  <span className="footer-location">
                     📍 {person.location}
                   </span>
+
+
+                  <div className="footer-mini-links">
+
+                    {person.instagram && (
+                      <a
+                        href={person.instagram}
+                        target="_blank"
+                        rel="noreferrer"
+                      >
+                        Instagram ↗
+                      </a>
+                    )}
+
+
+                    {person.email && (
+                      <a
+                        href={`mailto:${person.email}`}
+                      >
+                        Email ↗
+                      </a>
+                    )}
+
+
+                    {person.linkedin && (
+                      <a
+                        href={person.linkedin}
+                        target="_blank"
+                        rel="noreferrer"
+                      >
+                        LinkedIn ↗
+                      </a>
+                    )}
+
+
+                    {person.behance && (
+                      <a
+                        href={person.behance}
+                        target="_blank"
+                        rel="noreferrer"
+                      >
+                        Behance ↗
+                      </a>
+                    )}
+
+                  </div>
 
                 </div>
 
