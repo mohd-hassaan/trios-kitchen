@@ -928,3 +928,72 @@ a.contact-row:hover {
   }
 
 }
+/* =========================================================
+   TWO-SIDED V-CARDS
+   ========================================================= */
+
+.vcard-image-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 12px;
+}
+
+.vcard-side {
+  position: relative;
+}
+
+.vcard-side .vcard-image {
+  width: 100%;
+  display: block;
+  aspect-ratio: 504 / 317;
+  object-fit: cover;
+  border-radius: 16px;
+  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.12);
+}
+
+.vcard-side-label {
+  position: absolute;
+  left: 10px;
+  bottom: 10px;
+  padding: 6px 9px;
+  border-radius: 999px;
+  background: rgba(0, 0, 0, 0.72);
+  color: #fff;
+  font-size: 9px;
+  font-weight: 900;
+  letter-spacing: 0.12em;
+}
+
+.vcard-badge {
+  z-index: 2;
+}
+
+/* Footer: show both sides clearly */
+.footer-card-images {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 8px;
+}
+
+.footer-card-images img {
+  width: 100%;
+  aspect-ratio: 504 / 317;
+  object-fit: cover;
+  border-radius: 10px;
+  display: block;
+}
+
+/* Mobile */
+@media (max-width: 560px) {
+  .vcard-image-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .vcard-side .vcard-image {
+    aspect-ratio: 504 / 317;
+  }
+
+  .footer-card-images {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
