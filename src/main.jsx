@@ -133,10 +133,6 @@ function ContactCard({ person, index }) {
 
         </div>
 
-        <span className="vcard-badge">
-          BOTH SIDES • DIGITAL CARD
-        </span>
-
       </div>
 
 
@@ -1019,8 +1015,7 @@ function App() {
 
                   {person.cards.map((card) => (
                     <img
-                      key={card.image}
-                      src={card.image}
+                     
                       alt={`${person.name} ${card.label.toLowerCase()} card`}
                       loading="lazy"
                     />
