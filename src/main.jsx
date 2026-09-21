@@ -45,7 +45,7 @@ const creators = [
     role: 'Artist',
     phone: '+91 7522814482',
     location: 'Kanpur',
-    image: '/assets/heba-vcard-contact.png',
+    image: '/assets/V Card-1.png',
     instagram: 'https://www.instagram.com/hebacreates__',
     handle: '@hebacreates__',
   },
@@ -55,7 +55,7 @@ const creators = [
     role: 'Graphic & Visual Designer',
     phone: '+91 6306727168',
     location: 'Kanpur, India',
-    image: '/assets/zainab-vcard-contact.png',
+    image: '/assets/ZAINAB KHANAM V CARD-1.png',
     email: 'zainukhan065@gmail.com',
     linkedin:
       'https://linkedin.com/in/zainab-khanam-b22aa329b/',
@@ -1020,17 +1020,39 @@ function App() {
 
         <div className="footer-bottom">
 
-          <span>
-            Made with food, fun & lots of love. ❤️
-          </span>
+          <div className="footer-copy">
+            <span>
+              Made with food, fun & lots of love. ❤️
+            </span>
 
-          <a
-            href={INSTAGRAM_URL}
-            target="_blank"
-            rel="noreferrer"
-          >
-            @trioss.__.kitchen09 ↗
-          </a>
+            <a
+              href={INSTAGRAM_URL}
+              target="_blank"
+              rel="noreferrer"
+            >
+              @trioss.__.kitchen09 ↗
+            </a>
+          </div>
+
+
+          <div className="developer-credit">
+
+            <span>
+              Developed by <strong>Mohd Hassan</strong>
+            </span>
+
+            <a
+              href="https://mohd-hassan-portfolio.vercel.app"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="portfolio-link"
+              aria-label="Visit Mohd Hassan's portfolio"
+            >
+              <span>Visit Portfolio</span>
+              <span className="arrow-icon">↗</span>
+            </a>
+
+          </div>
 
         </div>
 

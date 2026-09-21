@@ -756,3 +756,175 @@ a.contact-row:hover {
   }
 
 }
+/* =========================================================
+   FOOTER BOTTOM
+   ========================================================= */
+
+.footer-bottom {
+  position: relative;
+  z-index: 1;
+
+  max-width: 1180px;
+  margin: 28px auto 0;
+
+  padding-top: 25px;
+
+  border-top: 1px solid rgba(255, 255, 255, 0.14);
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  gap: 25px;
+
+  font-size: 12px;
+}
+
+
+/* LEFT SIDE */
+
+.footer-copy {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+
+  opacity: 0.78;
+}
+
+
+.footer-copy a {
+  color: #fff;
+
+  text-decoration: none;
+
+  font-weight: 800;
+
+  transition:
+    color 0.2s ease,
+    transform 0.2s ease;
+}
+
+
+.footer-copy a:hover {
+  color: #f5b51b;
+
+  transform: translateX(3px);
+}
+
+
+/* =========================================================
+   DEVELOPER CREDIT
+   ========================================================= */
+
+.developer-credit {
+  display: flex;
+
+  align-items: center;
+
+  justify-content: flex-end;
+
+  gap: 12px;
+
+  white-space: nowrap;
+
+  color: rgba(255, 255, 255, 0.72);
+}
+
+
+.developer-credit strong {
+  color: #fff;
+
+  font-weight: 900;
+}
+
+
+/* =========================================================
+   PORTFOLIO BUTTON
+   ========================================================= */
+
+.portfolio-link {
+  display: inline-flex;
+
+  align-items: center;
+
+  gap: 7px;
+
+  padding: 9px 14px;
+
+  border-radius: 999px;
+
+  color: #fff;
+
+  text-decoration: none;
+
+  font-weight: 900;
+
+  background: rgba(255, 255, 255, 0.10);
+
+  border: 1px solid rgba(255, 255, 255, 0.18);
+
+  transition:
+    background 0.25s ease,
+    transform 0.25s ease,
+    border-color 0.25s ease;
+}
+
+
+.portfolio-link:hover {
+  background: #f5b51b;
+
+  color: #18351f;
+
+  border-color: #f5b51b;
+
+  transform: translateY(-2px);
+}
+
+
+.arrow-icon {
+  font-size: 15px;
+
+  line-height: 1;
+
+  transition:
+    transform 0.25s ease;
+}
+
+
+.portfolio-link:hover .arrow-icon {
+  transform:
+    translate(2px, -2px);
+}
+
+
+/* =========================================================
+   MOBILE
+   ========================================================= */
+
+@media (max-width: 650px) {
+
+  .footer-bottom {
+    flex-direction: column;
+
+    align-items: center;
+
+    text-align: center;
+
+    gap: 18px;
+  }
+
+
+  .footer-copy {
+    align-items: center;
+  }
+
+
+  .developer-credit {
+    flex-direction: column;
+
+    gap: 9px;
+
+    white-space: normal;
+  }
+
+}
