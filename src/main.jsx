@@ -81,7 +81,7 @@ const creators = [
     ],
     email: 'zainukhan065@gmail.com',
     linkedin:
-      'https://linkedin.com/in/zainab-khanam-b22aa329/',
+      'https://www.linkedin.com/in/zainab-khanam-b22aa329b/',
     behance: 'https://behance.net/zainabkhan97',
   },
 ];
