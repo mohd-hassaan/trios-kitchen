@@ -3,6 +3,11 @@ import { createRoot } from 'react-dom/client';
 import { motion } from 'framer-motion';
 import './styles.css';
 
+import hebaCard1 from './assets/V Card-1.png';
+import hebaCard2 from './assets/V Card-2.png';
+import zainabCard1 from './assets/ZAINAB KHANAM V Card-1.png';
+import zainabCard2 from './assets/ZAINAB KHANAM V Card-2.png';
+
 const MAP_URL = 'https://maps.app.goo.gl/HiMEpQVsH4ns6CfdA';
 const INSTAGRAM_URL =
   'https://www.instagram.com/trioss.__.kitchen09?stkn=enhsNnFsdWI1dGUy';
@@ -45,7 +50,16 @@ const creators = [
     role: 'Artist',
     phone: '+91 7522814482',
     location: 'Kanpur',
-    image: '/assets/V Card-1.png',
+    cards: [
+      {
+        image: hebaCard1,
+        label: 'FRONT',
+      },
+      {
+        image: hebaCard2,
+        label: 'CONTACT',
+      },
+    ],
     instagram: 'https://www.instagram.com/hebacreates__',
     handle: '@hebacreates__',
   },
@@ -55,10 +69,19 @@ const creators = [
     role: 'Graphic & Visual Designer',
     phone: '+91 6306727168',
     location: 'Kanpur, India',
-    image: '/assets/ZAINAB KHANAM V CARD-1.png',
+    cards: [
+      {
+        image: zainabCard1,
+        label: 'FRONT',
+      },
+      {
+        image: zainabCard2,
+        label: 'CONTACT',
+      },
+    ],
     email: 'zainukhan065@gmail.com',
     linkedin:
-      'https://linkedin.com/in/zainab-khanam-b22aa329b/',
+      'https://linkedin.com/in/zainab-khanam-b22aa329/',
     behance: 'https://behance.net/zainabkhan97',
   },
 ];
@@ -83,18 +106,35 @@ function ContactCard({ person, index }) {
       whileHover={{ y: -8 }}
     >
 
-      {/* V-CARD IMAGE */}
+      {/* BOTH SIDES OF THE V-CARD */}
       <div className="vcard-image-wrap">
 
-        <img
-          src={person.image}
-          alt={`${person.name} visiting card contact details`}
-          className="vcard-image"
-          loading="lazy"
-        />
+        <div className="vcard-image-grid">
+
+          {person.cards.map((card) => (
+            <div
+              className="vcard-side"
+              key={card.image}
+            >
+
+              <img
+                src={card.image}
+                alt={`${person.name} visiting card ${card.label.toLowerCase()} side`}
+                className="vcard-image"
+                loading="lazy"
+              />
+
+              <span className="vcard-side-label">
+                {card.label}
+              </span>
+
+            </div>
+          ))}
+
+        </div>
 
         <span className="vcard-badge">
-          DIGITAL CARD
+          BOTH SIDES • DIGITAL CARD
         </span>
 
       </div>
@@ -975,11 +1015,18 @@ function App() {
                 key={person.name}
               >
 
-                <img
-                  src={person.image}
-                  alt={`${person.name} contact card`}
-                  loading="lazy"
-                />
+                <div className="footer-card-images">
+
+                  {person.cards.map((card) => (
+                    <img
+                      key={card.image}
+                      src={card.image}
+                      alt={`${person.name} ${card.label.toLowerCase()} card`}
+                      loading="lazy"
+                    />
+                  ))}
+
+                </div>
 
 
                 <div>
